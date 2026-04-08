@@ -29,24 +29,25 @@
         private void InitializeComponent()
         {
             grpProfil = new GroupBox();
-            grpUtilisateur = new GroupBox();
-            MFAcheck = new CheckBox();
-            btnValider = new Button();
-            lbid = new Label();
-            txtID = new TextBox();
-            lblNiveau = new Label();
             txtNiveau = new TextBox();
-            lblID = new Label();
-            lblnom = new Label();
-            lblemail = new Label();
-            lblmdp = new Label();
-            lblIDprofil = new Label();
-            txtID1 = new TextBox();
-            txtnom = new TextBox();
-            txtemail = new TextBox();
-            txtMdp = new TextBox();
-            cmbIDprofil = new ComboBox();
+            lblNiveau = new Label();
+            txtID = new TextBox();
+            lbid = new Label();
+            btnValider = new Button();
+            MFAcheck = new CheckBox();
+            grpUtilisateur = new GroupBox();
+            lsbUtilisateur = new ListBox();
             btnValide = new Button();
+            cmbIDprofil = new ComboBox();
+            txtMdp = new TextBox();
+            txtemail = new TextBox();
+            txtnom = new TextBox();
+            txtID1 = new TextBox();
+            lblIDprofil = new Label();
+            lblmdp = new Label();
+            lblemail = new Label();
+            lblnom = new Label();
+            lblID = new Label();
             grpProfil.SuspendLayout();
             grpUtilisateur.SuspendLayout();
             SuspendLayout();
@@ -65,10 +66,61 @@
             grpProfil.TabIndex = 0;
             grpProfil.TabStop = false;
             grpProfil.Text = "Profil";
-            grpProfil.Enter += this.groupBox1_Enter;
+            // 
+            // txtNiveau
+            // 
+            txtNiveau.Location = new Point(78, 82);
+            txtNiveau.Name = "txtNiveau";
+            txtNiveau.Size = new Size(150, 31);
+            txtNiveau.TabIndex = 5;
+            // 
+            // lblNiveau
+            // 
+            lblNiveau.AutoSize = true;
+            lblNiveau.Location = new Point(6, 79);
+            lblNiveau.Name = "lblNiveau";
+            lblNiveau.Size = new Size(66, 25);
+            lblNiveau.TabIndex = 4;
+            lblNiveau.Text = "Niveau";
+            // 
+            // txtID
+            // 
+            txtID.Location = new Point(78, 45);
+            txtID.Name = "txtID";
+            txtID.Size = new Size(150, 31);
+            txtID.TabIndex = 3;
+            // 
+            // lbid
+            // 
+            lbid.AutoSize = true;
+            lbid.Location = new Point(6, 38);
+            lbid.Name = "lbid";
+            lbid.Size = new Size(30, 25);
+            lbid.TabIndex = 2;
+            lbid.Text = "ID";
+            // 
+            // btnValider
+            // 
+            btnValider.Location = new Point(69, 154);
+            btnValider.Name = "btnValider";
+            btnValider.Size = new Size(112, 34);
+            btnValider.TabIndex = 1;
+            btnValider.Text = "valider";
+            btnValider.UseVisualStyleBackColor = true;
+            // 
+            // MFAcheck
+            // 
+            MFAcheck.AutoSize = true;
+            MFAcheck.Location = new Point(83, 119);
+            MFAcheck.Name = "MFAcheck";
+            MFAcheck.Size = new Size(74, 29);
+            MFAcheck.TabIndex = 0;
+            MFAcheck.Text = "MFA";
+            MFAcheck.UseVisualStyleBackColor = true;
             // 
             // grpUtilisateur
             // 
+            grpUtilisateur.Controls.Add(lsbUtilisateur);
             grpUtilisateur.Controls.Add(btnValide);
             grpUtilisateur.Controls.Add(cmbIDprofil);
             grpUtilisateur.Controls.Add(txtMdp);
@@ -82,98 +134,65 @@
             grpUtilisateur.Controls.Add(lblID);
             grpUtilisateur.Location = new Point(488, 27);
             grpUtilisateur.Name = "grpUtilisateur";
-            grpUtilisateur.Size = new Size(300, 319);
+            grpUtilisateur.Size = new Size(300, 411);
             grpUtilisateur.TabIndex = 0;
             grpUtilisateur.TabStop = false;
             grpUtilisateur.Text = "Utilisateur";
             // 
-            // MFAcheck
+            // lsbUtilisateur
             // 
-            MFAcheck.AutoSize = true;
-            MFAcheck.Location = new Point(83, 119);
-            MFAcheck.Name = "MFAcheck";
-            MFAcheck.Size = new Size(74, 29);
-            MFAcheck.TabIndex = 0;
-            MFAcheck.Text = "MFA";
-            MFAcheck.UseVisualStyleBackColor = true;
+            lsbUtilisateur.FormattingEnabled = true;
+            lsbUtilisateur.Location = new Point(84, 276);
+            lsbUtilisateur.Name = "lsbUtilisateur";
+            lsbUtilisateur.Size = new Size(180, 129);
+            lsbUtilisateur.TabIndex = 1;
+            lsbUtilisateur.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
-            // btnValider
+            // btnValide
             // 
-            btnValider.Location = new Point(69, 154);
-            btnValider.Name = "btnValider";
-            btnValider.Size = new Size(112, 34);
-            btnValider.TabIndex = 1;
-            btnValider.Text = "valider";
-            btnValider.UseVisualStyleBackColor = true;
-            btnValider.Click += this.button1_Click;
+            btnValide.Location = new Point(114, 236);
+            btnValide.Name = "btnValide";
+            btnValide.Size = new Size(112, 34);
+            btnValide.TabIndex = 1;
+            btnValide.Text = "Valider";
+            btnValide.UseVisualStyleBackColor = true;
             // 
-            // lbid
+            // cmbIDprofil
             // 
-            lbid.AutoSize = true;
-            lbid.Location = new Point(6, 38);
-            lbid.Name = "lbid";
-            lbid.Size = new Size(30, 25);
-            lbid.TabIndex = 2;
-            lbid.Text = "ID";
+            cmbIDprofil.FormattingEnabled = true;
+            cmbIDprofil.Location = new Point(99, 197);
+            cmbIDprofil.Name = "cmbIDprofil";
+            cmbIDprofil.Size = new Size(182, 33);
+            cmbIDprofil.TabIndex = 12;
+            cmbIDprofil.SelectedIndexChanged += cmbIDprofil_SelectedIndexChanged;
             // 
-            // txtID
+            // txtMdp
             // 
-            txtID.Location = new Point(78, 45);
-            txtID.Name = "txtID";
-            txtID.Size = new Size(150, 31);
-            txtID.TabIndex = 3;
+            txtMdp.Location = new Point(114, 157);
+            txtMdp.Name = "txtMdp";
+            txtMdp.Size = new Size(150, 31);
+            txtMdp.TabIndex = 10;
             // 
-            // lblNiveau
+            // txtemail
             // 
-            lblNiveau.AutoSize = true;
-            lblNiveau.Location = new Point(6, 79);
-            lblNiveau.Name = "lblNiveau";
-            lblNiveau.Size = new Size(66, 25);
-            lblNiveau.TabIndex = 4;
-            lblNiveau.Text = "Niveau";
+            txtemail.Location = new Point(114, 119);
+            txtemail.Name = "txtemail";
+            txtemail.Size = new Size(150, 31);
+            txtemail.TabIndex = 9;
             // 
-            // txtNiveau
+            // txtnom
             // 
-            txtNiveau.Location = new Point(78, 82);
-            txtNiveau.Name = "txtNiveau";
-            txtNiveau.Size = new Size(150, 31);
-            txtNiveau.TabIndex = 5;
+            txtnom.Location = new Point(114, 82);
+            txtnom.Name = "txtnom";
+            txtnom.Size = new Size(150, 31);
+            txtnom.TabIndex = 8;
             // 
-            // lblID
+            // txtID1
             // 
-            lblID.AutoSize = true;
-            lblID.Location = new Point(6, 38);
-            lblID.Name = "lblID";
-            lblID.Size = new Size(30, 25);
-            lblID.TabIndex = 1;
-            lblID.Text = "ID";
-            // 
-            // lblnom
-            // 
-            lblnom.AutoSize = true;
-            lblnom.Location = new Point(6, 79);
-            lblnom.Name = "lblnom";
-            lblnom.Size = new Size(52, 25);
-            lblnom.TabIndex = 2;
-            lblnom.Text = "Nom";
-            // 
-            // lblemail
-            // 
-            lblemail.AutoSize = true;
-            lblemail.Location = new Point(6, 119);
-            lblemail.Name = "lblemail";
-            lblemail.Size = new Size(54, 25);
-            lblemail.TabIndex = 3;
-            lblemail.Text = "Email";
-            // 
-            // lblmdp
-            // 
-            lblmdp.AutoSize = true;
-            lblmdp.Location = new Point(6, 159);
-            lblmdp.Name = "lblmdp";
-            lblmdp.Size = new Size(50, 25);
-            lblmdp.TabIndex = 4;
-            lblmdp.Text = "Mdp";
+            txtID1.Location = new Point(114, 38);
+            txtID1.Name = "txtID1";
+            txtID1.Size = new Size(150, 31);
+            txtID1.TabIndex = 7;
             // 
             // lblIDprofil
             // 
@@ -184,50 +203,41 @@
             lblIDprofil.TabIndex = 6;
             lblIDprofil.Text = "IDprofil";
             // 
-            // txtID1
+            // lblmdp
             // 
-            txtID1.Location = new Point(114, 38);
-            txtID1.Name = "txtID1";
-            txtID1.Size = new Size(150, 31);
-            txtID1.TabIndex = 7;
+            lblmdp.AutoSize = true;
+            lblmdp.Location = new Point(6, 159);
+            lblmdp.Name = "lblmdp";
+            lblmdp.Size = new Size(50, 25);
+            lblmdp.TabIndex = 4;
+            lblmdp.Text = "Mdp";
             // 
-            // txtnom
+            // lblemail
             // 
-            txtnom.Location = new Point(114, 82);
-            txtnom.Name = "txtnom";
-            txtnom.Size = new Size(150, 31);
-            txtnom.TabIndex = 8;
+            lblemail.AutoSize = true;
+            lblemail.Location = new Point(6, 119);
+            lblemail.Name = "lblemail";
+            lblemail.Size = new Size(54, 25);
+            lblemail.TabIndex = 3;
+            lblemail.Text = "Email";
             // 
-            // txtemail
+            // lblnom
             // 
-            txtemail.Location = new Point(114, 119);
-            txtemail.Name = "txtemail";
-            txtemail.Size = new Size(150, 31);
-            txtemail.TabIndex = 9;
+            lblnom.AutoSize = true;
+            lblnom.Location = new Point(6, 79);
+            lblnom.Name = "lblnom";
+            lblnom.Size = new Size(52, 25);
+            lblnom.TabIndex = 2;
+            lblnom.Text = "Nom";
             // 
-            // txtMdp
+            // lblID
             // 
-            txtMdp.Location = new Point(114, 157);
-            txtMdp.Name = "txtMdp";
-            txtMdp.Size = new Size(150, 31);
-            txtMdp.TabIndex = 10;
-            // 
-            // cmbIDprofil
-            // 
-            cmbIDprofil.FormattingEnabled = true;
-            cmbIDprofil.Location = new Point(99, 197);
-            cmbIDprofil.Name = "cmbIDprofil";
-            cmbIDprofil.Size = new Size(182, 33);
-            cmbIDprofil.TabIndex = 12;
-            // 
-            // btnValide
-            // 
-            btnValide.Location = new Point(114, 252);
-            btnValide.Name = "btnValide";
-            btnValide.Size = new Size(112, 34);
-            btnValide.TabIndex = 1;
-            btnValide.Text = "Valider";
-            btnValide.UseVisualStyleBackColor = true;
+            lblID.AutoSize = true;
+            lblID.Location = new Point(6, 38);
+            lblID.Name = "lblID";
+            lblID.Size = new Size(30, 25);
+            lblID.TabIndex = 1;
+            lblID.Text = "ID";
             // 
             // frmMenu
             // 
@@ -238,6 +248,7 @@
             Controls.Add(grpProfil);
             Name = "frmMenu";
             Text = "Form1";
+            Load += frmMenu_Load;
             grpProfil.ResumeLayout(false);
             grpProfil.PerformLayout();
             grpUtilisateur.ResumeLayout(false);
@@ -266,5 +277,6 @@
         private Label lblemail;
         private Label lblnom;
         private Label lblID;
+        private ListBox lsbUtilisateur;
     }
 }
